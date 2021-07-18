@@ -1,0 +1,268 @@
+{
+	"music.cold": {
+		"sounds": [
+			{
+				"name": "dynmus:music.down",
+				"type": "event"
+			}
+		]
+	},
+	"music.hot": {
+		"sounds": [
+			{
+				"name": "music.nice",
+				"type": "event"
+			}
+		]
+	},
+	"music.cave": {
+		"sounds": [
+			{
+				"name": "music/game/nuance1",
+				"stream": true
+			},
+			{
+				"name": "music/game/nuance2",
+				"stream": true
+			},
+			{
+				"name": "music/game/piano1",
+				"stream": true
+			},
+			{
+				"name": "records/13",
+				"stream": true,
+				"weight": 2
+			}
+		]
+	},
+	"music.down": {
+		"sounds": [
+			{
+				"name": "music/game/calm2",
+				"stream": true
+			},
+			{
+				"name": "music/game/hal1",
+				"stream": true
+			},
+			{
+				"name": "music/game/hal2",
+				"stream": true
+			},
+			{
+				"name": "music/game/nuance1",
+				"stream": true
+			},
+			{
+				"name": "music/game/nuance2",
+				"stream": true
+			},
+			{
+				"name": "music/game/piano1",
+				"stream": true
+			},
+			{
+				"name": "music/game/piano3",
+				"stream": true
+			}
+		]
+	},
+	"music.nice": {
+		"sounds": [
+			{
+				"name": "music/game/calm1",
+				"stream": true
+			},
+			{
+				"name": "music/game/calm3",
+				"stream": true
+			},
+			{
+				"name": "music/game/hal3",
+				"stream": true
+			},
+			{
+				"name": "music/game/hal4",
+				"stream": true
+			},
+			{
+				"name": "music/game/piano2",
+				"stream": true
+			},
+			{
+				"name": "music/game/piano3",
+				"stream": true
+			}
+		]
+	},
+	"music.cold.creative": {
+		"sounds": [
+			{
+				"name": "dynmus:music.down",
+				"type": "event"
+			}
+		]
+	},
+	"music.hot.creative": {
+		"sounds": [
+			{
+				"name": "music.nice",
+				"type": "event"
+			},
+			{
+				"name": "music/game/creative/creative4",
+				"stream": true
+			}
+		]
+	},
+	"music.cave.creative": {
+		"sounds": [
+			{
+				"name": "music/game/nuance1",
+				"stream": true
+			},
+			{
+				"name": "music/game/nuance2",
+				"stream": true
+			},
+			{
+				"name": "music/game/piano1",
+				"stream": true
+			},
+			{
+				"name": "records/13",
+				"stream": true,
+				"weight": 2
+			},
+			{
+				"name": "music/game/creative/creative3",
+				"stream": true
+			}
+		]
+	},
+	"music.down.creative": {
+		"sounds": [
+			{
+				"name": "music/game/calm2",
+				"stream": true
+			},
+			{
+				"name": "music/game/hal1",
+				"stream": true
+			},
+			{
+				"name": "music/game/hal2",
+				"stream": true
+			},
+			{
+				"name": "music/game/nuance1",
+				"stream": true
+			},
+			{
+				"name": "music/game/nuance2",
+				"stream": true
+			},
+			{
+				"name": "music/game/piano1",
+				"stream": true
+			},
+			{
+				"name": "music/game/piano3",
+				"stream": true
+			},
+			{
+				"name": "music/game/creative/creative1",
+				"stream": true
+			},
+			{
+				"name": "music/game/creative/creative5",
+				"stream": true
+			}
+		]
+	},
+	"music.nice.creative": {
+		"sounds": [
+			{
+				"name": "music/game/calm1",
+				"stream": true
+			},
+			{
+				"name": "music/game/calm3",
+				"stream": true
+			},
+			{
+				"name": "music/game/hal3",
+				"stream": true
+			},
+			{
+				"name": "music/game/hal4",
+				"stream": true
+			},
+			{
+				"name": "music/game/piano2",
+				"stream": true
+			},
+			{
+				"name": "music/game/piano3",
+				"stream": true
+			},
+			{
+				"name": "music/game/creative/creative2",
+				"stream": true
+			},
+			{
+				"name": "music/game/creative/creative3",
+				"stream": true
+			},
+			{
+				"name": "music/game/creative/creative6",
+				"stream": true
+			}
+		]
+	},
+	"music.end.creative": {
+		"sounds": [
+			{
+				"name": "minecraft:music.end",
+				"type": "event"
+			},
+			{
+				"name": "dynmus:music/end/creative1",
+				"stream": true
+			},
+			{
+				"name": "dynmus:music/end/creative2",
+				"stream": true
+			},
+			{
+				"name": "dynmus:music/end/creative3",
+				"stream": true
+			},
+			{
+				"name": "dynmus:music/end/creative4",
+				"stream": true
+			}
+		]
+	},
+	"music.end.boss": {
+		"sounds": [
+			{
+				"name": "minecraft:music.dragon",
+				"type": "event"
+			},
+			{
+				"name": "dynmus:music/end/boss/boss1",
+				"stream": true
+			},
+			{
+				"name": "dynmus:music/end/boss/boss2",
+				"stream": true
+			},
+			{
+				"name": "dynmus:music/end/boss/boss3",
+				"stream": true
+			}
+		]
+	}
+}

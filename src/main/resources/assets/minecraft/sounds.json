@@ -1,0 +1,11 @@
+{
+	"music_disc.13": {
+		"replace": true,
+		"sounds": [
+			{
+				"name": "dynmus:music/13_record_c418_death",
+				"stream": true
+			}
+		]
+	}
+}

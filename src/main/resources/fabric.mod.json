@@ -1,0 +1,34 @@
+{
+	"schemaVersion": 1,
+	"id": "dynmus",
+	"version": "${version}",
+	"name": "Dynamic Music",
+	"description": "Adds more dynamic music ques, and more music itself for that!",
+	"authors": [
+		"LudoCrypt"
+	],
+	"contact": {
+		"homepage": "https://www.curseforge.com/minecraft/mc-mods/dynamic-music",
+		"sources": "https://github.com/LudoCrypt/Dynamic-Music",
+		"issues": "https://github.com/LudoCrypt/Dynamic-Music/issues"
+	},
+	"license": "LGPLv3",
+	"icon": "assets/dynmus/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"client": [
+			"net.ludocrypt.dynmus.DynamicMusic"
+		],
+		"modmenu": [
+			"net.ludocrypt.dynmus.config.DynamicMusicModMenuCompat"
+		]
+	},
+	"mixins": [
+		"dynmus.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.7.4",
+		"fabric": "*",
+		"minecraft": "1.17.x"
+	}
+}

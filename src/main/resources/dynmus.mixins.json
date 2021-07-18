@@ -1,0 +1,14 @@
+{
+	"required": true,
+	"minVersion": "0.8",
+	"package": "net.ludocrypt.dynmus.mixin",
+	"compatibilityLevel": "JAVA_16",
+	"client": [
+		"MinecraftClientMixin",
+		"BiomeEffectSoundPlayerMixin",
+		"PositionedSoundInstanceMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
