@@ -37,7 +37,7 @@ public class BiomeEffectSoundPlayerMixin {
 	private Random random;
 
 	@Inject(method = "tick", at = @At("HEAD"))
-	private void DYNMUSIC_tick(CallbackInfo ci) {
+	private void dynmus$tick(CallbackInfo ci) {
 		this.moodSound.ifPresent((biomeMoodSound) -> {
 			World world = this.player.world;
 			if (DynamicMusic.isInCave(world, player.getBlockPos()) && DynamicMusic.isInPseudoMineshaft(world, player.getBlockPos())) {

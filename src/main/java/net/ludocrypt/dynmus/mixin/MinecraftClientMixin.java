@@ -25,23 +25,24 @@ public class MinecraftClientMixin {
 
 	@Shadow
 	public ClientPlayerEntity player;
+
 	@Shadow
 	public ClientWorld world;
 
 	@Inject(method = "getMusicType", at = @At("RETURN"), cancellable = true)
-	private void DYNMUSIC_getMusicType(CallbackInfoReturnable<MusicSound> ci) {
-		if (ci.getReturnValue() == MusicType.GAME || ci.getReturnValue() == MusicType.CREATIVE) {
+	private void dynmus$getMusicType(CallbackInfoReturnable<MusicSound> ci) {
+		if (ci.getReturnValue().equals(MusicType.GAME) || ci.getReturnValue().equals(MusicType.CREATIVE)) {
 			if (this.world != null) {
 				if (DynamicMusic.isInCave(world, player.getBlockPos())) {
-					DYNMUS_setReturnType(ci, DynamicMusic.MUSIC_CAVE);
+					dynmus$setReturnType(ci, DynamicMusic.MUSIC_CAVE);
 				} else if ((world.getBiomeAccess().getBiome(this.player.getBlockPos()).getTemperature() < 0.15F) || (world.isRaining()) && DynamicMusicConfig.getInstance().coldMusic) {
-					DYNMUS_setReturnType(ci, DynamicMusic.MUSIC_COLD);
+					dynmus$setReturnType(ci, DynamicMusic.MUSIC_COLD);
 				} else if ((world.getBiomeAccess().getBiome(this.player.getBlockPos()).getTemperature() > 0.95F) && (!world.isRaining()) && DynamicMusicConfig.getInstance().hotMusic) {
-					DYNMUS_setReturnType(ci, DynamicMusic.MUSIC_HOT);
+					dynmus$setReturnType(ci, DynamicMusic.MUSIC_HOT);
 				} else if (world.getTimeOfDay() <= 12500 && DynamicMusicConfig.getInstance().niceMusic) {
-					DYNMUS_setReturnType(ci, DynamicMusic.MUSIC_NICE);
+					dynmus$setReturnType(ci, DynamicMusic.MUSIC_NICE);
 				} else if (world.getTimeOfDay() > 12500 && DynamicMusicConfig.getInstance().downMusic) {
-					DYNMUS_setReturnType(ci, DynamicMusic.MUSIC_DOWN);
+					dynmus$setReturnType(ci, DynamicMusic.MUSIC_DOWN);
 				}
 			}
 		} else if (ci.getReturnValue() == MusicType.DRAGON) {
@@ -54,7 +55,7 @@ public class MinecraftClientMixin {
 	}
 
 	@Unique
-	private void DYNMUS_setReturnType(CallbackInfoReturnable<MusicSound> ci, SoundEvent e) {
+	private void dynmus$setReturnType(CallbackInfoReturnable<MusicSound> ci, SoundEvent e) {
 		ci.setReturnValue(MusicType.createIngameMusic(new SoundEvent(ci.getReturnValue() == MusicType.CREATIVE ? e.getId() : new Identifier(String.join("", e.getId().toString(), ".creative")))));
 	}
 }

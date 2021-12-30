@@ -25,6 +25,5 @@
 	"text.autoconfig.dynamicmusic.option.dynamicPitchAnchor": "Dynamic Pitch Anchor",
 	"text.autoconfig.dynamicmusic.option.dynamicPitchAnchor.@Tooltip": "The anchor that the Dynamic Pitch uses. 18000 being midnight",
 	"text.autoconfig.dynamicmusic.option.dynamicPitchFaster": "Dynamic Pitch 'Faster'",
-	"text.autoconfig.dynamicmusic.option.dynamicPitchFaster.@Tooltip": "Choose to play music faster, rather than slower",
-	"item.minecraft.music_disc_13.desc": "C418 - Death"
+	"text.autoconfig.dynamicmusic.option.dynamicPitchFaster.@Tooltip": "Choose to play music faster, rather than slower"
 }

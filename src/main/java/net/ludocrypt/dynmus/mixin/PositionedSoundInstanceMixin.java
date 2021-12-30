@@ -21,8 +21,8 @@ import net.minecraft.util.math.MathHelper;
 @Mixin(value = PositionedSoundInstance.class, priority = 80)
 public class PositionedSoundInstanceMixin {
 
-	@Inject(method = "music(Lnet/minecraft/sound/SoundEvent;)Lnet/minecraft/client/sound/PositionedSoundInstance;", at = @At("RETURN"), cancellable = true)
-	private static void DYNMUS_changePitch(SoundEvent music, CallbackInfoReturnable<PositionedSoundInstance> ci) {
+	@Inject(method = "music", at = @At("RETURN"), cancellable = true)
+	private static void dynmus$changePitch(SoundEvent music, CallbackInfoReturnable<PositionedSoundInstance> ci) {
 		DynamicMusicConfig config = DynamicMusicConfig.getInstance();
 		Random random = new Random();
 		MinecraftClient client = MinecraftClient.getInstance();
