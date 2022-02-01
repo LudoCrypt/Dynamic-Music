@@ -46,10 +46,10 @@ public class MinecraftClientMixin {
 				}
 			}
 		} else if (ci.getReturnValue() == MusicType.DRAGON) {
-			ci.setReturnValue(MusicType.createIngameMusic(DynamicMusic.MUSIC_END_BOSS));
+			ci.setReturnValue(new MusicSound(DynamicMusic.MUSIC_END_BOSS, 0, 0, true));
 		} else if (ci.getReturnValue() == MusicType.END) {
 			if (this.player.getAbilities().creativeMode && this.player.getAbilities().allowFlying) {
-				ci.setReturnValue(MusicType.createIngameMusic(DynamicMusic.MUSIC_END_CREATIVE));
+				ci.setReturnValue(new MusicSound(DynamicMusic.MUSIC_END_CREATIVE, 1200, 8000, true));
 			}
 		}
 	}
