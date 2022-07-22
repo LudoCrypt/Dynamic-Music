@@ -32,9 +32,9 @@ public class BiomeEffectSoundPlayerMixin {
 	@Shadow
 	private Optional<BiomeMoodSound> moodSound = Optional.empty();
 
-	@Shadow
-	@Final
-	private Random random;
+//	@Shadow
+//	@Final
+//	private Random random;
 
 	@Inject(method = "tick", at = @At("HEAD"))
 	private void dynmus$tick(CallbackInfo ci) {
