@@ -1,8 +1,8 @@
 package net.ludocrypt.dynmus.mixin;
 
 import java.util.Optional;
-import java.util.Random;
 
+import net.minecraft.util.math.random.Random;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -22,27 +22,29 @@ import net.minecraft.world.World;
 @Mixin(BiomeEffectSoundPlayer.class)
 public class BiomeEffectSoundPlayerMixin {
 
-	@Shadow
-	private float moodPercentage;
+  @Shadow
+  private float moodPercentage;
 
-	@Shadow
-	@Final
-	private ClientPlayerEntity player;
+  @Shadow
+  @Final
+  private ClientPlayerEntity player;
 
-	@Shadow
-	private Optional<BiomeMoodSound> moodSound = Optional.empty();
+  @Shadow
+  private Optional<BiomeMoodSound> moodSound = Optional.empty();
 
-//	@Shadow
-//	@Final
-//	private Random random;
+  @Shadow
+  @Final
+  private Random random;
 
-	@Inject(method = "tick", at = @At("HEAD"))
-	private void dynmus$tick(CallbackInfo ci) {
-		this.moodSound.ifPresent((biomeMoodSound) -> {
-			World world = this.player.world;
-			if (DynamicMusic.isInCave(world, player.getBlockPos()) && DynamicMusic.isInPseudoMineshaft(world, player.getBlockPos())) {
-				this.moodPercentage += (float) ((15 - DynamicMusic.getAverageDarkness(world, player.getBlockPos())) / (float) biomeMoodSound.getCultivationTicks());
-			}
-		});
-	}
+  @Inject(method = "tick", at = @At("HEAD"))
+  private void dynmus$tick(CallbackInfo ci) {
+    this.moodSound.ifPresent((biomeMoodSound) -> {
+      World world = this.player.world;
+      if (DynamicMusic.isInCave(world, player.getBlockPos())
+          && DynamicMusic.isInPseudoMineshaft(world, player.getBlockPos())) {
+        this.moodPercentage += (float) ((15 - DynamicMusic.getAverageDarkness(world, player.getBlockPos()))
+            / (float) biomeMoodSound.getCultivationTicks());
+      }
+    });
+  }
 }
