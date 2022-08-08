@@ -83,13 +83,11 @@ public class DynamicMusic implements ClientModInitializer {
 
 			double blockCount = Math.pow(searchRange * 2, 3);
 
-			double stonePercentage = ((double) stoneBlocks) / ((double) blockCount);
+			double stonePercentage = ((double) stoneBlocks) / (blockCount);
 			double darkPercentage = ((double) darkBlocks) / ((double) airBlocks);
 
 			if (darkPercentage >= DynamicMusicConfig.getInstance().darknessPercent) {
-				if (stonePercentage >= DynamicMusicConfig.getInstance().stonePercent) {
-					return true;
-				}
+				return stonePercentage >= DynamicMusicConfig.getInstance().stonePercent;
 			}
 		}
 		return false;
@@ -147,10 +145,7 @@ public class DynamicMusic implements ClientModInitializer {
 
 			double mineshaftPercentage = ((double) pseudoMineshaftBlocks) / ((double) airBlocks);
 
-			if (mineshaftPercentage >= DynamicMusicConfig.getInstance().pseudoMineshaftPercent) {
-				return true;
-			}
-
+			return mineshaftPercentage >= DynamicMusicConfig.getInstance().pseudoMineshaftPercent;
 		}
 
 		return false;

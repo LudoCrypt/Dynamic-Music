@@ -35,9 +35,9 @@ public class MinecraftClientMixin {
 			if (this.world != null) {
 				if (DynamicMusic.isInCave(world, player.getBlockPos())) {
 					dynmus$setReturnType(ci, DynamicMusic.MUSIC_CAVE);
-				} else if ((world.getBiomeAccess().getBiome(this.player.getBlockPos()).getTemperature() < 0.15F) || (world.isRaining()) && DynamicMusicConfig.getInstance().coldMusic) {
+				} else if ((world.getBiomeAccess().getBiome(this.player.getBlockPos()).value().getTemperature() < 0.15F) || (world.isRaining()) && DynamicMusicConfig.getInstance().coldMusic) {
 					dynmus$setReturnType(ci, DynamicMusic.MUSIC_COLD);
-				} else if ((world.getBiomeAccess().getBiome(this.player.getBlockPos()).getTemperature() > 0.95F) && (!world.isRaining()) && DynamicMusicConfig.getInstance().hotMusic) {
+				} else if ((world.getBiomeAccess().getBiome(this.player.getBlockPos()).value().getTemperature() > 0.95F) && (!world.isRaining()) && DynamicMusicConfig.getInstance().hotMusic) {
 					dynmus$setReturnType(ci, DynamicMusic.MUSIC_HOT);
 				} else if (world.getTimeOfDay() <= 12500 && DynamicMusicConfig.getInstance().niceMusic) {
 					dynmus$setReturnType(ci, DynamicMusic.MUSIC_NICE);
